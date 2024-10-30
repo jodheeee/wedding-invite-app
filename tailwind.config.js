@@ -11,7 +11,7 @@ export default {
     spacing: {
       ...basicSpace,
       360: pxToRem(360),
-      600: pxToRem(600),
+      650: pxToRem(650),
     },
     extend: {},
   },
