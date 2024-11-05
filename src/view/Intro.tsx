@@ -1,5 +1,5 @@
 import introImage from '@/assets/intro.jpg';
-import mouseCursorImage from '@/assets/mouse-cursor.png';
+import mouseCursorImage from '@/assets/mouse-cursor.svg';
 
 const Intro = () => {
   return (
