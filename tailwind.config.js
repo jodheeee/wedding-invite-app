@@ -6,10 +6,14 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      md: pxToRem(500),
+      md: pxToRem(550),
     },
     spacing: {
       ...basicSpace,
+      110: pxToRem(110),
+      120: pxToRem(120),
+      130: pxToRem(130),
+      160: pxToRem(160),
       360: pxToRem(360),
       650: pxToRem(650),
       800: pxToRem(800),
