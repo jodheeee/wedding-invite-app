@@ -1,42 +1,54 @@
+import { useState } from 'react';
 import dayjs from 'dayjs';
 import { BRIDE_NAME, GROOM_NAME, WEDDING_DATE_TIME, WEDDING_VENUE } from '../constant';
+import mainImage from '@/assets/main.jpg';
+import subMainImage from '@/assets/sub-main.jpg';
+import BackgroundMusic from '../components/common/BackgroundMusic';
 
 const Main = () => {
+  const TOTAL_IMAGES = 2;
+  const [loadedImages, setLoadedImages] = useState(0);
+
+  const handleImageLoad = () => {
+    setLoadedImages((prev) => prev + 1);
+  };
+
+  const mediaLoaded = loadedImages === TOTAL_IMAGES;
+
   return (
-    <div className="flex flex-col items-center pt-80 gap-45">
-      <p className="text-2xl">저희 결혼합니다</p>
-      <div className="px-60 w-full">
-        <div className="flex items-center justify-center w-full bg-[#efe6cf] rounded-md h-360">
-          이미지
+    <div className="mt-15 min-h-900">
+      <div style={{ opacity: mediaLoaded ? 1 : 0, transition: 'opacity 0.6s ease' }}>
+        <div className="pr-25">
+          <BackgroundMusic />
         </div>
-      </div>
-      <div className="text-center">
-        <p className="text-xl font-semibold">
-          {GROOM_NAME} | {BRIDE_NAME}
+        <p className="text-center text-4xl font-MapoDacapo mt-30">Our wedding day</p>
+        <p className="text-center text-[12px] mt-3">
+          {GROOM_NAME} & {BRIDE_NAME}
         </p>
-      </div>
-      <div className="flex flex-col items-center gap-1 text-lg">
-        <p className="font-semibold">
-          {dayjs(WEDDING_DATE_TIME).format('YYYY년 MM월 DD일 HH시')}
-        </p>
-        <p>•</p>
-        <p className="font-semibold">{WEDDING_VENUE.NAME}</p>
-        <p>
-          <a
-            className="text-sky-500 underline cursor-pointer text-sm"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={WEDDING_VENUE.MAP_LINK}
-          >
-            {WEDDING_VENUE.ADDRESS}
-          </a>
-        </p>
-      </div>
-      <div className="flex flex-col items-center w-full py-60 mt-20 gap-10 bg-[#f4f2eb]">
-        <p>대충 감동적인 말들...</p>
-        <p>쏼라쏼라 쏼라쏼라 쏼라쏼라 쏼라쏼라</p>
-        <p>대충 감동적인 말들...</p>
-        <p>쏼라쏼라 쏼라쏼라 쏼라쏼라 쏼라쏼라</p>
+        <div className="flex flex-col items-center gap-90 mt-15">
+          <img
+            src={mainImage}
+            alt="main image"
+            onLoad={handleImageLoad}
+            className="w-full"
+          />
+          <div className="text-center border-black border-y-1 px-35 py-10 text-[15px]">
+            <p>{dayjs(WEDDING_DATE_TIME).format('YYYY년 M월 D일 토요일 오후 h시')}</p>
+            <p className="mt-3">{WEDDING_VENUE.NAME}</p>
+          </div>
+          <img
+            src={subMainImage}
+            alt="sub main image"
+            onLoad={handleImageLoad}
+            className="w-full"
+          />
+        </div>
+        <div className="flex flex-col items-center w-full gap-6 mt-30 text-[15px]">
+          <p>그대가 잡아 준 손이 참 따뜻합니다.</p>
+          <p>오랫동안, 아주 오랫동안</p>
+          <p>같은 곳을 바라보며 걸어가고 싶습니다.</p>
+          <p className="text-xs mt-12">- 함께, 서윤덕 -</p>
+        </div>
       </div>
     </div>
   );
