@@ -58,7 +58,7 @@ const AccountToggle = ({
         </div>
       </div>
       <div style={{ opacity: showToast ? 1 : 0, transition: 'opacity 0.4s ease' }}>
-        <div className="fixed bottom-20 bg-zinc-600 text-white rounded-lg px-50 py-15">
+        <div className="fixed md:bottom-20 bottom-35 bg-zinc-600 text-white rounded-lg px-50 py-15">
           <p className="text-sm">계좌번호를 복사했습니다</p>
         </div>
       </div>
