@@ -8,13 +8,24 @@ const AccountToggle = ({
   className,
 }: {
   label: string;
-  accountInfo: string;
+  accountInfo: { name: string; accountNumber: string; bank: string };
   className: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const toggleAccount = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const onClickCopy = (text: string) => {
+    window.navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000);
+      })
+      .catch(() => {});
   };
 
   return (
@@ -37,7 +48,19 @@ const AccountToggle = ({
         }`}
       >
         <div className="py-17 bg-white border border-gray-100 rounded-md mt-2 flex gap-5 flex-col">
-          <p className="text-sm text-gray-500 text-center">{accountInfo}</p>
+          <p
+            className="text-sm text-gray-500 text-center"
+            onClick={() => onClickCopy(accountInfo.accountNumber)}
+          >
+            * 계좌번호:{' '}
+            <span className="underline cursor-pointer">{accountInfo.accountNumber}</span>{' '}
+            {accountInfo.bank} {accountInfo.name}
+          </p>
+        </div>
+      </div>
+      <div style={{ opacity: showToast ? 1 : 0, transition: 'opacity 0.4s ease' }}>
+        <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-black text-white rounded-lg px-70 py-15">
+          <p className="text-sm">계좌번호를 복사했습니다.</p>
         </div>
       </div>
     </div>
