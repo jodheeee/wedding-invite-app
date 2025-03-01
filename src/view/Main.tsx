@@ -18,9 +18,7 @@ const Main = () => {
   return (
     <div className="mt-15 min-h-900">
       <div style={{ opacity: mediaLoaded ? 1 : 0, transition: 'opacity 1s ease' }}>
-        <div className="pr-25">
-          <BackgroundMusic />
-        </div>
+        <BackgroundMusic />
         <p className="text-center text-4xl font-MapoDacapo mt-30">Our wedding day</p>
         <p className="text-center text-[12px] mt-3">
           {GROOM_NAME} & {BRIDE_NAME}
