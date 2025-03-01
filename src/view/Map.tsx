@@ -4,8 +4,15 @@ import { WEDDING_VENUE } from '../constant';
 
 const Map = () => {
   return (
-    <div className="px-20 pt-100">
-      <p className="text-center md:text-3xl text-2xl font-MapoDacapo mb-11">
+    <div className="px-20 pt-70">
+      <div className="text-center">
+        <p className="text-amber-950">소중한 분들을 초대합니다.</p>
+        <p className="text-sm mt-25">오랜 기다림 속에서 저희 두 사람,</p>
+        <p className="text-sm mt-3">한 마음 되어 참된 사랑의 결실을</p>
+        <p className="text-sm mt-3">맺게 되었습니다.</p>
+        <p className="text-sm mt-18">오셔서 축복해 주시면 큰 기쁨이겠습니다.</p>
+      </div>
+      <p className="text-center md:text-3xl text-2xl font-MapoDacapo mt-80 mb-11">
         - Getting Here -
       </p>
       <ImageWithBackground

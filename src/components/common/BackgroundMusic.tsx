@@ -22,7 +22,13 @@ const BackgroundMusic = () => {
         onClick={togglePlay}
         className="text-sm"
       >
-        {isPlaying ? '⏸︎ Stop' : '▶︎ Play'}
+        {isPlaying ? (
+          <p>
+            <span className="font-extrabold">II</span> Stop
+          </p>
+        ) : (
+          <p>▶︎ Play</p>
+        )}
       </button>
       <audio
         ref={audioRef}
