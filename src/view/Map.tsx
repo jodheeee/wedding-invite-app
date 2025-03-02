@@ -4,7 +4,7 @@ import { WEDDING_VENUE } from '../constant';
 
 const Map = () => {
   return (
-    <div className="px-20 pt-70">
+    <div className="px-20 pt-75">
       <div className="text-center">
         <p className="text-amber-950">소중한 분들을 초대합니다.</p>
         <p className="text-sm mt-25">오랜 기다림 속에서 저희 두 사람,</p>
@@ -12,7 +12,15 @@ const Map = () => {
         <p className="text-sm mt-3">맺게 되었습니다.</p>
         <p className="text-sm mt-18">오셔서 축복해 주시면 큰 기쁨이겠습니다.</p>
       </div>
-      <p className="text-center md:text-3xl text-2xl font-MapoDacapo mt-80 mb-11">
+      <div className="mt-30 flex flex-col items-center">
+        <div className="text-left">
+          <p className="text-xs">류영찬 ・ 이은재 아들 대희</p>
+          <p className="text-xs mt-4">
+            정재철 ・ 조용애 <span className="mx-[5.5px]">딸</span> 영진
+          </p>
+        </div>
+      </div>
+      <p className="text-center md:text-3xl text-2xl font-MapoDacapo mt-85 mb-12">
         - Getting Here -
       </p>
       <ImageWithBackground
