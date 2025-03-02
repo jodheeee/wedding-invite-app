@@ -7,7 +7,7 @@ const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowMessage(false), 6000);
+    const timer = setTimeout(() => setShowMessage(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
