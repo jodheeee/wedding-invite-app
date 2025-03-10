@@ -6,9 +6,17 @@ const BackgroundMusic = () => {
   const [showMessage, setShowMessage] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  const isKaKaoBrowser = () => {
+    const userAgent = navigator.userAgent;
+    if (userAgent.indexOf('KAKAO') > -1) return true;
+    return false;
+  };
+
   useEffect(() => {
-    const timer = setTimeout(() => setShowMessage(false), 5000);
-    return () => clearTimeout(timer);
+    if (!isKaKaoBrowser()) {
+      const timer = setTimeout(() => setShowMessage(false), 5000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const togglePlay = () => {
@@ -22,9 +30,21 @@ const BackgroundMusic = () => {
     }
   };
 
+  useEffect(() => {
+    if (isKaKaoBrowser()) {
+      const timer = setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.play();
+          setIsPlaying(true);
+        }
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <div className="relative pr-15">
-      {showMessage && !isPlaying && (
+      {!isKaKaoBrowser() && showMessage && !isPlaying && (
         <p className="absolute right-85 top-6 text-xs text-neutral-500">
           재생 버튼을 눌러, 감동을 더해보세요!
         </p>
