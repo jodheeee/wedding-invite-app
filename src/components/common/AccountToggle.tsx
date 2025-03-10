@@ -4,11 +4,11 @@ import topArrowImage from '@/assets/top-arrow.svg';
 
 const AccountToggle = ({
   label,
-  accountInfo,
+  accountInfoList,
   className,
 }: {
   label: string;
-  accountInfo: { name: string; accountNumber: string; bank: string };
+  accountInfoList: { id: string; name: string; accountNumber: string; bank: string }[];
   className: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,20 +41,27 @@ const AccountToggle = ({
           className="ml-10 w-12 transition-transform duration-300"
         />
       </div>
-
       <div
         className={`overflow-hidden transition-all duration-300 ${
           isOpen ? 'max-h-100 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="py-17 bg-white border border-gray-100 rounded-md mt-2 flex gap-5 flex-col">
-          <p
-            className="text-sm text-gray-500 text-center"
-            onClick={() => onClickCopy(accountInfo.accountNumber)}
-          >
-            <span className="underline cursor-pointer">{accountInfo.accountNumber}</span>{' '}
-            {accountInfo.bank} {accountInfo.name}
-          </p>
+        <div className="py-17 bg-white border border-gray-100 rounded-md mt-2 flex flex-col">
+          <ul className="mx-auto">
+            {accountInfoList.map((accountInfo) => (
+              <li key={accountInfo.id}>
+                <p
+                  className="text-sm text-gray-500 text-left mb-7"
+                  onClick={() => onClickCopy(accountInfo.accountNumber)}
+                >
+                  <span className="underline cursor-pointer">
+                    {accountInfo.accountNumber}
+                  </span>{' '}
+                  {accountInfo.bank} {accountInfo.name}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div style={{ opacity: showToast ? 1 : 0, transition: 'opacity 0.4s ease' }}>

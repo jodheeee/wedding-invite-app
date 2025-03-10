@@ -14,9 +14,11 @@ const Map = () => {
       </div>
       <div className="mt-30 flex flex-col items-center">
         <div className="text-left">
-          <p className="text-xs">류영찬 ・ 이은재 아들 대희</p>
+          <p className="text-xs">
+            류영찬 ・ 이은재 <span className="ml-9 mr-3">아들</span> 대희
+          </p>
           <p className="text-xs mt-4">
-            정재철 ・ 조용애 <span className="mx-[5.5px]">딸</span> 영진
+            정재철 ・ 조용애 <span className="ml-15 mr-9">딸</span> 영진
           </p>
         </div>
       </div>

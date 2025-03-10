@@ -14,20 +14,44 @@ const Message = () => {
       </div>
       <AccountToggle
         label="신랑측"
-        accountInfo={{
-          name: GROOM_NAME,
-          accountNumber: '110-380-496610',
-          bank: '(신한은행)',
-        }}
+        accountInfoList={[
+          {
+            id: 'g1',
+            name: GROOM_NAME,
+            accountNumber: '110-380-496610',
+            bank: '(신한은행)',
+          },
+          {
+            id: 'g2',
+            name: '이은재',
+            accountNumber: '1166-12-125528',
+            bank: '(농협)',
+          },
+        ]}
         className="px-5"
       />
       <AccountToggle
         label="신부측"
-        accountInfo={{
-          name: BRIDE_NAME,
-          accountNumber: '302-1485-2176-11',
-          bank: '(농협)',
-        }}
+        accountInfoList={[
+          {
+            id: 'b1',
+            name: BRIDE_NAME,
+            accountNumber: '302-1485-2176-11',
+            bank: '(농협)',
+          },
+          {
+            id: 'b2',
+            name: '조용애',
+            accountNumber: '352-0606-4195-13',
+            bank: '(농협)',
+          },
+          {
+            id: 'b3',
+            name: '정재철',
+            accountNumber: '676925-94-146475',
+            bank: '(국민은행)',
+          },
+        ]}
         className="px-5 mt-15"
       />
       <p className="text-xs text-center mt-100 mb-18">Created by Dae-Hee, just for you</p>
