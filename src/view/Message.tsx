@@ -54,7 +54,7 @@ const Message = () => {
         ]}
         className="px-5 mt-15"
       />
-      <p className="text-xs text-center mt-100 mb-18">Created by Dae-Hee, just for you</p>
+      <p className="text-xs text-center mt-90 mb-20">Created by Dae-Hee, just for you</p>
     </div>
   );
 };

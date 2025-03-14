@@ -43,7 +43,7 @@ const AccountToggle = ({
       </div>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-100 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-120 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="py-17 bg-white border border-gray-100 rounded-md mt-2 flex flex-col">
