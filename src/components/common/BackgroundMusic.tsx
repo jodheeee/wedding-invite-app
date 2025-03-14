@@ -13,15 +13,14 @@ const BackgroundMusic = () => {
   };
 
   useEffect(() => {
-    if (!isKaKaoBrowser()) {
-      const timer = setTimeout(() => setShowMessage(false), 5000);
-      return () => clearTimeout(timer);
-    }
+    const timer = setTimeout(() => setShowMessage(false), 6000);
+    return () => clearTimeout(timer);
   }, []);
 
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
+        if (isKaKaoBrowser() && showMessage) setShowMessage(false);
         audioRef.current.pause();
       } else {
         audioRef.current.play();
@@ -44,9 +43,11 @@ const BackgroundMusic = () => {
 
   return (
     <div className="relative pr-15">
-      {!isKaKaoBrowser() && showMessage && !isPlaying && (
-        <p className="absolute right-85 top-6 text-xs text-neutral-500">
-          재생 버튼을 눌러, 감동을 더해보세요!
+      {showMessage && (isKaKaoBrowser() || !isPlaying) && (
+        <p className="absolute right-85 top-7 text-xs text-neutral-400">
+          {isKaKaoBrowser()
+            ? '배경음악이 재생중 입니다.'
+            : '재생 버튼을 눌러, 감동을 더해보세요!'}
         </p>
       )}
       <div className="px-9 pb-2 w-fit border border-black rounded-full cursor-pointer ml-auto">
