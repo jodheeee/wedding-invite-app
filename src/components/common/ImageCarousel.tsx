@@ -45,13 +45,15 @@ const ImageCarousel: React.FC<CarouselProps> = ({ images }) => {
           ))}
         </div>
         <button
-          className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-gray-500 bg-opacity-40 text-white py-3 pr-9 pl-7 rounded hover:bg-opacity-75"
+          className="absolute left-10 top-1/2 transform -translate-y-1/2 text-xs
+          bg-gray-500 bg-opacity-25 text-white py-7 pr-8 pl-7 rounded hover:bg-opacity-30"
           onClick={goToPrev}
         >
           ◀︎
         </button>
         <button
-          className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-gray-500 bg-opacity-40 text-white py-3 pl-9 pr-7 rounded hover:bg-opacity-75"
+          className="absolute right-10 top-1/2 transform -translate-y-1/2 text-xs
+          bg-gray-500 bg-opacity-25 text-white py-7 pl-8 pr-7 rounded hover:bg-opacity-30"
           onClick={goToNext}
         >
           ▶︎
