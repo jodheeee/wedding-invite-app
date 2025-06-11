@@ -1,6 +1,6 @@
 import ImageCarousel from '../components/common/ImageCarousel';
 
-const imageModules = import.meta.glob('@/assets/gallery/g-*.jpg', {
+const imageModules = import.meta.glob('@/assets/gallery/*', {
   eager: true,
 }) as Record<string, { default: string }>;
 

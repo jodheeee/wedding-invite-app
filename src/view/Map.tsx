@@ -1,6 +1,12 @@
 import mapImage from '@/assets/map.png';
 import ImageWithBackground from '../components/common/ImageWithBackground';
-import { WEDDING_VENUE } from '../constant';
+import {
+  BRIDE_FIRST_NAME,
+  BRIDE_PARENTS,
+  GROOM_FIRST_NAME,
+  GROOM_PARENTS,
+  WEDDING_VENUE,
+} from '../constant';
 
 const Map = () => {
   return (
@@ -15,10 +21,12 @@ const Map = () => {
       <div className="mt-30 flex flex-col items-center">
         <div className="text-left">
           <p className="text-xs">
-            류영찬 ・ 이은재 <span className="ml-9 mr-3">아들</span> 대희
+            {GROOM_PARENTS.FATHER} ・ {GROOM_PARENTS.MOTHER}{' '}
+            <span className="ml-9 mr-3">아들</span> {GROOM_FIRST_NAME}
           </p>
           <p className="text-xs mt-4">
-            정재철 ・ 조용애 <span className="ml-15 mr-9">딸</span> 영진
+            {BRIDE_PARENTS.FATHER} ・ {BRIDE_PARENTS.MOTHER}{' '}
+            <span className="ml-15 mr-9">딸</span> {BRIDE_FIRST_NAME}
           </p>
         </div>
       </div>

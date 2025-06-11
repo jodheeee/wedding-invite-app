@@ -1,5 +1,5 @@
 import AccountToggle from '../components/common/AccountToggle';
-import { BRIDE_NAME, GROOM_NAME } from '../constant';
+import { BRIDE_ACCOUNT, GROOM_ACCOUNT } from '../constant';
 
 const Message = () => {
   return (
@@ -14,44 +14,12 @@ const Message = () => {
       </div>
       <AccountToggle
         label="신랑측"
-        accountInfoList={[
-          {
-            id: 'g1',
-            name: GROOM_NAME,
-            accountNumber: '110-380-496610',
-            bank: '(신한은행)',
-          },
-          {
-            id: 'g2',
-            name: '이은재',
-            accountNumber: '1166-12-125528',
-            bank: '(농협)',
-          },
-        ]}
+        accountInfoList={GROOM_ACCOUNT}
         className="px-5"
       />
       <AccountToggle
         label="신부측"
-        accountInfoList={[
-          {
-            id: 'b1',
-            name: BRIDE_NAME,
-            accountNumber: '302-1485-2176-11',
-            bank: '(농협)',
-          },
-          {
-            id: 'b2',
-            name: '정재철',
-            accountNumber: '676925-94-146475',
-            bank: '(국민은행)',
-          },
-          {
-            id: 'b3',
-            name: '조용애',
-            accountNumber: '352-0606-4195-13',
-            bank: '(농협)',
-          },
-        ]}
+        accountInfoList={BRIDE_ACCOUNT}
         className="px-5 mt-15"
       />
       <p className="text-xs text-center mt-90 mb-20">Created by Dae-Hee, just for you</p>
