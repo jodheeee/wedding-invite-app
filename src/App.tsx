@@ -4,12 +4,18 @@ import Gallery from './view/Gallery';
 import Map from './view/Map';
 import Message from './view/Message';
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { useEffect } from 'react';
 
 const App = async () => {
-  const delay = (ms = 3000) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  };
-  await delay();
+  useEffect(() => {
+    const delay = (ms = 3000) => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    };
+    const loadContent = async () => {
+      await delay();
+    };
+    loadContent();
+  }, []);
 
   return (
     <ModuleView>
