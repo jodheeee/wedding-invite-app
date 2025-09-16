@@ -6,7 +6,7 @@ import Message from './view/Message';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { useEffect } from 'react';
 
-const App = async () => {
+const App = () => {
   useEffect(() => {
     const delay = (ms = 3000) => {
       return new Promise(resolve => setTimeout(resolve, ms));
