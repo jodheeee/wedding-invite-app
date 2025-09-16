@@ -5,7 +5,12 @@ import Map from './view/Map';
 import Message from './view/Message';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
-const App = () => {
+const App = async () => {
+  const delay = (ms = 3000) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  };
+  await delay();
+
   return (
     <ModuleView>
       <SpeedInsights />
