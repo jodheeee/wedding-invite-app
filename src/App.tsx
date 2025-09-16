@@ -6,7 +6,13 @@ import Message from './view/Message';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const App = () => {
-  throw new Error('oops!');
+  try {
+    throw new Error('oops!');
+  } catch (error: any) {
+    console.error('에러 발생:', error.message);
+    console.error('스택 트레이스:', error.stack);
+  }
+  
   return (
     <ModuleView>
       <SpeedInsights />
