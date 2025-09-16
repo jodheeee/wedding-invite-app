@@ -11,6 +11,8 @@ const App = () => {
   } catch (error: any) {
     console.error('에러 발생:', error.message);
     console.error('스택 트레이스:', error.stack);
+    alert('에러발생');
+    return null;
   }
   
   return (
