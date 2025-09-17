@@ -5,6 +5,7 @@ import Map from './view/Map';
 import Message from './view/Message';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { useEffect } from 'react';
+import SlowLCPComponent from './components/common/SlowLCPComponent';
 
 const App = () => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const App = () => {
   return (
     <ModuleView>
       <SpeedInsights />
+      <SlowLCPComponent />
       <Main />
       <Gallery />
       <Map />
