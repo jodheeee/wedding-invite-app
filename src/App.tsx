@@ -4,18 +4,21 @@ import Gallery from './view/Gallery';
 import Map from './view/Map';
 import Message from './view/Message';
 import { SpeedInsights } from "@vercel/speed-insights/react"
-import { useEffect } from 'react';
-import SlowLCPComponent from './components/common/SlowLCPComponent';
+// import { useEffect } from 'react';
+// import SlowLCPComponent from './components/common/SlowLCPComponent';
 
 const App = () => {
+  /**
   useEffect(() => {
     fetch('/api');
   }, []);
+   */
+
   
   return (
     <ModuleView>
       <SpeedInsights />
-      <SlowLCPComponent />
+      {/* <SlowLCPComponent /> */ }
       <Main />
       <Gallery />
       <Map />
