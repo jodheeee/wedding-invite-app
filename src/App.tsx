@@ -13,6 +13,7 @@ const App = () => {
     fetch('/api');
   }, []);
 
+
   return (
     <ModuleView>
       <SpeedInsights />
