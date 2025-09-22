@@ -8,10 +8,12 @@ import { useEffect } from 'react';
 import SlowLCPComponent from './components/common/SlowLCPComponent';
 
 const App = () => {
-
+  
   useEffect(() => {
     fetch('/api');
   }, []);
+
+
 
   return (
     <ModuleView>
